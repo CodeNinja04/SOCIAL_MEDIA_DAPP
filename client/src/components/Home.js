@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useMoralis } from "react-moralis";
 import Logout from "./Logout";
+import Upload from "./UploadDataModal";
 
 const Home = () => {
    const { isAuthenticated, user, authenticate,isAuthenticating } = useMoralis();
@@ -48,7 +49,8 @@ useEffect(() => {
        </div>
        <p>USERNAME : {current.get("username")}</p>
        <p>ADDRESS : {current.attributes.role}</p>
-       <p><img src={current.attributes.imagehash} height={200} width={200} /></p>
+       {/* <p><img src={current.attributes.imagehash} height={200} width={200} /></p> */}
+       <Upload />
      </div>
    );
 }

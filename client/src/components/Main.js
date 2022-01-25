@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import Socialabi from "../contracts/Social.json";
+import Socialabi from "../contracts/SocialMedia.json";
 import Web3 from "web3";
+import Upload from "./UploadDataModal";
 //import Navbar from "./components/Navbar";
 
 function Main() {
@@ -11,7 +12,7 @@ function Main() {
   const [loading, setLoading] = useState(false);
   const [symbol, setSymbol] = useState("");
   const [event, setEvent] = useState();
-
+  const [hash,setHash]=useState("test");
   useEffect(() => {
     loadweb3();
     LoadBlockchaindata();
@@ -67,7 +68,14 @@ function Main() {
       Hello
       <p>ACCOUNT:{account}</p>
       <p>BALANCE:{balance}</p>
-     >
+     
+    <Upload setHash={setHash} hash={hash} />
+
+    {/*call post function  id image  description and title */ } 
+
+
+
+    {hash}
      
     </div>
   );
